@@ -20,22 +20,39 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
-    lblOnes: TLabel;
-    lblTwos: TLabel;
-    lblThrees: TLabel;
-    lblFours: TLabel;
-    lblFives: TLabel;
-    lblSixes: TLabel;
-    lblThreeOfKind: TLabel;
-    lblFourOfKind: TLabel;
-    lblSmallStraight: TLabel;
-    lblLargeStraight: TLabel;
-    lblYaz: TLabel;
-    Label6: TLabel;
     lblUpperTotal: TLabel;
     lblLowerTotal: TLabel;
     lblGrandTotal: TLabel;
-    lstTest: TListBox;
+    btnOnes: TButton;
+    lbltot1: TLabel;
+    lbltot6: TLabel;
+    lbltot5: TLabel;
+    lbltot4: TLabel;
+    lbltot3: TLabel;
+    lbltot2: TLabel;
+    lblUpperTotalCalc: TLabel;
+    lblThreeOfKindTot: TLabel;
+    lblFourOfKindTot: TLabel;
+    lblSmallStraightTot: TLabel;
+    lblLargeStraightTot: TLabel;
+    lblYazTot: TLabel;
+    lblChanceTot: TLabel;
+    lblLowerTot: TLabel;
+    lblGrandTot: TLabel;
+    btnTwos: TButton;
+    btnThrees: TButton;
+    btnFours: TButton;
+    btnFives: TButton;
+    btnSixes: TButton;
+    btnThreeOfKind: TButton;
+    btnFourOfKind: TButton;
+    btnSmallStraight: TButton;
+    btnLargeStraight: TButton;
+    btnYaz: TButton;
+    btnChance: TButton;
+    btnRestartGame: TButton;
+    lblFullHouse: TLabel;
+    btnFullHouse: TButton;
     procedure FormDestroy(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnRollDiceClick(Sender: TObject);
@@ -55,12 +72,14 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure btnRestartGameClick(Sender: TObject);
   private
     FDiceSet: TDiceSet;
     procedure SetDiceSet(const Value: TDiceSet);
     { Private declarations }
   public
     property DiceSet: TDiceSet read FDiceSet write SetDiceSet;
+    procedure ResetScoreBoard;
     { Public declarations }
   end;
 
@@ -77,9 +96,49 @@ begin
     DiceSet.Free();
 end;
 
+procedure TfrmMainGameBoard.ResetScoreboard;
+begin
+  // Reset scoreboard
+  btnOnes.Enabled := True;
+  btnTwos.Enabled := True;
+  btnThrees.Enabled := True;
+  btnFours.Enabled := True;
+  btnFives.Enabled := True;
+  btnSixes.Enabled := True;
+  btnThreeOfKind.Enabled := True;
+  btnFourOfKind.Enabled := True;
+  btnSmallStraight.Enabled := True;
+  btnLargeStraight.Enabled := True;
+  btnFullHouse.Enabled := True;
+  btnYaz.Enabled := True;
+  btnChance.Enabled := True;
+
+  lbltot1.Caption := '0';
+  lbltot2.Caption := '0';
+  lbltot3.Caption := '0';
+  lbltot4.Caption := '0';
+  lbltot5.Caption := '0';
+  lbltot6.Caption := '0';
+  lblThreeOfKindTot.Caption := '0';
+  lblFourOfKindTot.Caption := '0';
+  lblFullHouse.Caption := '0';
+  lblYazTot.Caption := '0';
+  lblSmallStraightTot.Caption := '0';
+  lblLargeStraightTot.Caption := '0';
+  lblChanceTot.Caption := '0';
+  lblUpperTotalCalc.Caption := '0';
+  lblLowerTot.Caption := '0';
+  lblGrandTot.Caption := '0';
+end;
+
 procedure TfrmMainGameBoard.FormCreate(Sender: TObject);
 begin
   DiceSet := TDiceSet.Create();
+end;
+
+procedure TfrmMainGameBoard.btnRestartGameClick(Sender: TObject);
+begin
+  ResetScoreBoard;
 end;
 
 procedure TfrmMainGameBoard.btnRollDiceClick(Sender: TObject);

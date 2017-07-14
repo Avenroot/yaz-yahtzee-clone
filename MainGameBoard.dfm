@@ -2,8 +2,8 @@ object frmMainGameBoard: TfrmMainGameBoard
   Left = 0
   Top = 0
   Caption = 'Yaz'
-  ClientHeight = 401
-  ClientWidth = 534
+  ClientHeight = 406
+  ClientWidth = 486
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object frmMainGameBoard: TfrmMainGameBoard
   PixelsPerInch = 96
   TextHeight = 13
   object Dice1: TStandardDice
-    Left = 37
+    Left = 69
     Top = 24
     Width = 64
     Height = 64
@@ -2357,7 +2357,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Locked = False
   end
   object Dice2: TStandardDice
-    Left = 107
+    Left = 139
     Top = 24
     Width = 64
     Height = 64
@@ -4698,7 +4698,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Locked = False
   end
   object Dice3: TStandardDice
-    Left = 177
+    Left = 209
     Top = 24
     Width = 64
     Height = 64
@@ -7039,7 +7039,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Locked = False
   end
   object Dice4: TStandardDice
-    Left = 247
+    Left = 279
     Top = 24
     Width = 64
     Height = 64
@@ -9380,7 +9380,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Locked = False
   end
   object Dice5: TStandardDice
-    Left = 317
+    Left = 349
     Top = 24
     Width = 64
     Height = 64
@@ -11720,92 +11720,8 @@ object frmMainGameBoard: TfrmMainGameBoard
     ImageColor6 = clBlack
     Locked = False
   end
-  object lblOnes: TLabel
-    Left = 37
-    Top = 200
-    Width = 25
-    Height = 13
-    Caption = 'Ones'
-  end
-  object lblTwos: TLabel
-    Left = 37
-    Top = 220
-    Width = 25
-    Height = 13
-    Caption = 'Twos'
-  end
-  object lblThrees: TLabel
-    Left = 37
-    Top = 239
-    Width = 33
-    Height = 13
-    Caption = 'Threes'
-  end
-  object lblFours: TLabel
-    Left = 37
-    Top = 260
-    Width = 27
-    Height = 13
-    Caption = 'Fours'
-  end
-  object lblFives: TLabel
-    Left = 37
-    Top = 279
-    Width = 25
-    Height = 13
-    Caption = 'Fives'
-  end
-  object lblSixes: TLabel
-    Left = 37
-    Top = 300
-    Width = 25
-    Height = 13
-    Caption = 'Sixes'
-  end
-  object lblThreeOfKind: TLabel
-    Left = 251
-    Top = 200
-    Width = 68
-    Height = 13
-    Caption = 'Three of Kind:'
-  end
-  object lblFourOfKind: TLabel
-    Left = 251
-    Top = 220
-    Width = 62
-    Height = 13
-    Caption = 'Four of Kind:'
-  end
-  object lblSmallStraight: TLabel
-    Left = 251
-    Top = 239
-    Width = 69
-    Height = 13
-    Caption = 'Small Straight:'
-  end
-  object lblLargeStraight: TLabel
-    Left = 251
-    Top = 260
-    Width = 72
-    Height = 13
-    Caption = 'Large Straight:'
-  end
-  object lblYaz: TLabel
-    Left = 251
-    Top = 279
-    Width = 21
-    Height = 13
-    Caption = 'Yaz:'
-  end
-  object Label6: TLabel
-    Left = 251
-    Top = 300
-    Width = 40
-    Height = 13
-    Caption = 'Chance:'
-  end
   object lblUpperTotal: TLabel
-    Left = 37
+    Left = 21
     Top = 332
     Width = 60
     Height = 13
@@ -11813,20 +11729,228 @@ object frmMainGameBoard: TfrmMainGameBoard
   end
   object lblLowerTotal: TLabel
     Left = 251
-    Top = 332
+    Top = 351
     Width = 60
     Height = 13
     Caption = 'Lower Total:'
   end
   object lblGrandTotal: TLabel
     Left = 251
-    Top = 364
+    Top = 383
     Width = 60
     Height = 13
     Caption = 'Grand Total:'
   end
+  object lbltot1: TLabel
+    Left = 89
+    Top = 200
+    Width = 28
+    Height = 13
+    Caption = 'Ones'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbltot6: TLabel
+    Left = 89
+    Top = 300
+    Width = 30
+    Height = 13
+    Caption = 'Sixes'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbltot5: TLabel
+    Left = 89
+    Top = 279
+    Width = 29
+    Height = 13
+    Caption = 'Fives'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbltot4: TLabel
+    Left = 89
+    Top = 260
+    Width = 31
+    Height = 13
+    Caption = 'Fours'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbltot3: TLabel
+    Left = 89
+    Top = 239
+    Width = 39
+    Height = 13
+    Caption = 'Threes'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbltot2: TLabel
+    Left = 89
+    Top = 220
+    Width = 29
+    Height = 13
+    Caption = 'Twos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblUpperTotalCalc: TLabel
+    Left = 97
+    Top = 332
+    Width = 69
+    Height = 13
+    Caption = 'Upper Total:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblThreeOfKindTot: TLabel
+    Left = 339
+    Top = 200
+    Width = 77
+    Height = 13
+    Caption = 'Three of Kind:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblFourOfKindTot: TLabel
+    Left = 339
+    Top = 220
+    Width = 69
+    Height = 13
+    Caption = 'Four of Kind:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblSmallStraightTot: TLabel
+    Left = 339
+    Top = 258
+    Width = 83
+    Height = 13
+    Caption = 'Small Straight:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblLargeStraightTot: TLabel
+    Left = 339
+    Top = 279
+    Width = 84
+    Height = 13
+    Caption = 'Large Straight:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblYazTot: TLabel
+    Left = 339
+    Top = 298
+    Width = 23
+    Height = 13
+    Caption = 'Yaz:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblChanceTot: TLabel
+    Left = 339
+    Top = 319
+    Width = 44
+    Height = 13
+    Caption = 'Chance:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblLowerTot: TLabel
+    Left = 330
+    Top = 351
+    Width = 69
+    Height = 13
+    Caption = 'Lower Total:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblGrandTot: TLabel
+    Left = 330
+    Top = 383
+    Width = 69
+    Height = 13
+    Caption = 'Grand Total:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblFullHouse: TLabel
+    Left = 339
+    Top = 239
+    Width = 57
+    Height = 13
+    Caption = 'Full House'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object btnRollDice: TButton
-    Left = 128
+    Left = 151
     Top = 146
     Width = 75
     Height = 25
@@ -11835,7 +11959,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     OnClick = btnRollDiceClick
   end
   object btnStopDice: TButton
-    Left = 209
+    Left = 232
     Top = 146
     Width = 75
     Height = 25
@@ -11844,7 +11968,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     OnClick = btnStopDiceClick
   end
   object Button1: TButton
-    Left = 48
+    Left = 80
     Top = 93
     Width = 41
     Height = 25
@@ -11853,7 +11977,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 120
+    Left = 152
     Top = 94
     Width = 41
     Height = 25
@@ -11862,7 +11986,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 190
+    Left = 222
     Top = 94
     Width = 41
     Height = 25
@@ -11871,7 +11995,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 256
+    Left = 288
     Top = 94
     Width = 41
     Height = 25
@@ -11880,7 +12004,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 328
+    Left = 360
     Top = 94
     Width = 41
     Height = 25
@@ -11888,12 +12012,117 @@ object frmMainGameBoard: TfrmMainGameBoard
     TabOrder = 6
     OnClick = Button5Click
   end
-  object lstTest: TListBox
-    Left = 400
-    Top = 8
-    Width = 121
-    Height = 163
-    ItemHeight = 13
+  object btnOnes: TButton
+    Left = 20
+    Top = 197
+    Width = 53
+    Height = 19
+    Caption = 'Ones'
     TabOrder = 7
+  end
+  object btnTwos: TButton
+    Left = 20
+    Top = 217
+    Width = 53
+    Height = 19
+    Caption = 'Twos'
+    TabOrder = 8
+  end
+  object btnThrees: TButton
+    Left = 20
+    Top = 236
+    Width = 53
+    Height = 19
+    Caption = 'Threes'
+    TabOrder = 9
+  end
+  object btnFours: TButton
+    Left = 20
+    Top = 256
+    Width = 53
+    Height = 19
+    Caption = 'Fours'
+    TabOrder = 10
+  end
+  object btnFives: TButton
+    Left = 20
+    Top = 275
+    Width = 53
+    Height = 19
+    Caption = 'Fives'
+    TabOrder = 11
+  end
+  object btnSixes: TButton
+    Left = 20
+    Top = 295
+    Width = 53
+    Height = 19
+    Caption = 'Sixes'
+    TabOrder = 12
+  end
+  object btnThreeOfKind: TButton
+    Left = 240
+    Top = 197
+    Width = 86
+    Height = 19
+    Caption = '3 of Kind'
+    TabOrder = 13
+  end
+  object btnFourOfKind: TButton
+    Left = 240
+    Top = 217
+    Width = 86
+    Height = 19
+    Caption = '4 of Kind'
+    TabOrder = 14
+  end
+  object btnSmallStraight: TButton
+    Left = 240
+    Top = 255
+    Width = 86
+    Height = 19
+    Caption = 'Sm Straight'
+    TabOrder = 15
+  end
+  object btnLargeStraight: TButton
+    Left = 240
+    Top = 275
+    Width = 86
+    Height = 19
+    Caption = 'Lg Straight'
+    TabOrder = 16
+  end
+  object btnYaz: TButton
+    Left = 240
+    Top = 294
+    Width = 86
+    Height = 19
+    Caption = 'Yaz'
+    TabOrder = 17
+  end
+  object btnChance: TButton
+    Left = 240
+    Top = 314
+    Width = 86
+    Height = 19
+    Caption = 'Chance'
+    TabOrder = 18
+  end
+  object btnRestartGame: TButton
+    Left = 20
+    Top = 373
+    Width = 101
+    Height = 25
+    Caption = 'Restart Game'
+    TabOrder = 19
+    OnClick = btnRestartGameClick
+  end
+  object btnFullHouse: TButton
+    Left = 240
+    Top = 236
+    Width = 86
+    Height = 19
+    Caption = 'Full House'
+    TabOrder = 20
   end
 end

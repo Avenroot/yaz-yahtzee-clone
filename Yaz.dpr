@@ -4,7 +4,8 @@ uses
   Forms,
   MainMenu in 'MainMenu.pas' {frmMainMenu},
   MainGameBoard in 'MainGameBoard.pas' {frmMainGameBoard},
-  YazRules in 'YazRules.pas';
+  YazRules in 'YazRules.pas',
+  Scoreboard in 'Scoreboard.pas';
 
 {$R *.res}
 
