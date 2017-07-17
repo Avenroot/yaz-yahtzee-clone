@@ -12019,6 +12019,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Ones'
     TabOrder = 7
+    OnClick = btnOnesClick
   end
   object btnTwos: TButton
     Left = 20

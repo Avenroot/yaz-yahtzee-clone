@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdDice, StdCtrls, YazRules;
+  Dialogs, ExtCtrls, StdDice, StdCtrls, YazRules, Scoreboard;
 
 type
   TfrmMainGameBoard = class(TForm)
@@ -73,13 +73,18 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure btnRestartGameClick(Sender: TObject);
+    procedure btnOnesClick(Sender: TObject);
   private
     FDiceSet: TDiceSet;
+    FScoreBoard: TScoreboard;
     procedure SetDiceSet(const Value: TDiceSet);
+    procedure SetScoreboard(const Value: TScoreboard);
     { Private declarations }
   public
     property DiceSet: TDiceSet read FDiceSet write SetDiceSet;
-    procedure ResetScoreBoard;
+    property Scoreboard: TScoreboard read FScoreBoard write SetScoreboard;
+    procedure ResetScoreboard;
+    procedure UpdateScoreboard;
     { Public declarations }
   end;
 
@@ -92,8 +97,9 @@ implementation
 
 procedure TfrmMainGameBoard.FormDestroy(Sender: TObject);
 begin
-  if Assigned(DiceSet) then
-    DiceSet.Free();
+  if Assigned(DiceSet)then DiceSet.Free();
+  if Assigned(Scoreboard) then Scoreboard.Free();
+
 end;
 
 procedure TfrmMainGameBoard.ResetScoreboard;
@@ -134,6 +140,12 @@ end;
 procedure TfrmMainGameBoard.FormCreate(Sender: TObject);
 begin
   DiceSet := TDiceSet.Create();
+  Scoreboard := TScoreboard.Create();
+end;
+
+procedure TfrmMainGameBoard.btnOnesClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stOnes, DiceSet);
 end;
 
 procedure TfrmMainGameBoard.btnRestartGameClick(Sender: TObject);
@@ -252,6 +264,16 @@ end;
 procedure TfrmMainGameBoard.SetDiceSet(const Value: TDiceSet);
 begin
   FDiceSet := Value;
+end;
+
+procedure TfrmMainGameBoard.SetScoreboard(const Value: TScoreboard);
+begin
+  FScoreBoard := Value;
+end;
+
+procedure TfrmMainGameBoard.UpdateScoreboard;
+begin
+
 end;
 
 end.

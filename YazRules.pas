@@ -2,7 +2,7 @@ unit YazRules;
 
 interface
 
-uses Windows, Messages, SysUtils, Variants, Classes;
+uses Classes;
 
 type
 
@@ -47,16 +47,38 @@ type
 
   TRules = class(TObject)
 
+  private
+    function calcAllValues(DiceSet: TDiceSet): Integer;
 
   public
+    function IsOnes(DiceSet: TDiceSet): Boolean;
+    function IsTwos(DiceSet: TDiceSet): Boolean;
+    function IsThrees(DiceSet: TDiceSet): Boolean;
+    function IsFours(DiceSet: TDiceSet): Boolean;
+    function IsFives(DiceSet: TDiceSet): Boolean;
+    function IsSixes(DiceSet: TDiceSet): Boolean;
     function IsFourOfKind(DiceSet: TDiceSet): Boolean;
     function IsFullHouse(DiceSet: TDiceSet): Boolean;
     function IsLargeStraight(DiceSet: TDiceSet): Boolean;
     function IsSmallStraight(DiceSet: TDiceSet): Boolean;
     function IsThreeOfKind(DiceSet: TDiceSet): Boolean;
     function IsYaz(DiceSet: TDiceSet): Boolean;
-  end;
+    function IsChance(DiceSet: TDiceSet): Boolean;
 
+    function calcOnes(DiceSet: TDiceSet): Integer;
+    function calcTwos(DiceSet: TDiceSet): Integer;
+    function calcThrees(DiceSet: TDiceSet): Integer;
+    function calcFours(DiceSet: TDiceSet): Integer;
+    function calcFives(DiceSet: TDiceSet): Integer;
+    function calcSixes(DiceSet: TDiceSet): Integer;
+    function calcThreeOfKind(DiceSet: TDiceSet): Integer;
+    function calcFourOfKind(DiceSet: TDiceSet): Integer;
+    function calcSmallStraight(DiceSet: TDiceSet): Integer;
+    function calcLargeStraight(DiceSet: TDiceSet): Integer;
+    function calcFullHouse(DiceSet: TDiceSet): Integer;
+    function calcYaz(DiceSet: TDiceSet): Integer;
+    function calcChance(DiceSet: TDiceSet): Integer;
+  end;
 
 function HowManyOnes(DiceSet: TDiceSet): Integer;
 function HowManyTwos(DiceSet: TDiceSet): Integer;
@@ -66,8 +88,14 @@ function HowManyFives(DiceSet: TDiceSet): Integer;
 function HowManySixes(DiceSet: TDiceSet): Integer;
 
 function IsTwoOfSameKind(DiceSet: TDiceSet): TDiceResults;
-
 function IsThreeOfSameKind(DiceSet: TDiceSet): TDiceResults;
+
+const
+  FullHouseValue     = 25;
+  SmallStraightValue = 30;
+  LargeStraightValue = 40;
+  YazValue           = 50;
+  UpperBonus         = 35;
 
 implementation
 
@@ -301,6 +329,159 @@ begin
   FValue6 := Value;
 end;
 
+function TRules.calcAllValues(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := DiceSet.Value1 + DiceSet.Value2 + DiceSet.Value3 + DiceSet.Value4 + DiceSet.Value5 + DiceSet.Value6;
+
+  Result := r;
+end;
+
+function TRules.calcChance(DiceSet: TDiceSet): Integer;
+begin
+  Result := calcAllValues(DiceSet);
+end;
+
+function TRules.calcFives(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := 0;
+
+  if DiceSet.Value1 = 5 then r := r + 5;
+  if DiceSet.Value2 = 5 then r := r + 5;
+  if DiceSet.Value3 = 5 then r := r + 5;
+  if DiceSet.Value4 = 5 then r := r + 5;
+  if DiceSet.Value5 = 5 then r := r + 5;
+  if DiceSet.Value6 = 5 then r := r + 5;
+
+  Result := r;
+end;
+
+function TRules.calcFourOfKind(DiceSet: TDiceSet): Integer;
+begin
+  Result := calcAllValues(DiceSet);
+end;
+
+function TRules.calcFours(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := 0;
+
+  if DiceSet.Value1 = 4 then r := r + 4;
+  if DiceSet.Value2 = 4 then r := r + 4;
+  if DiceSet.Value3 = 4 then r := r + 4;
+  if DiceSet.Value4 = 4 then r := r + 4;
+  if DiceSet.Value5 = 4 then r := r + 4;
+  if DiceSet.Value6 = 4 then r := r + 4;
+
+  Result := r;
+end;
+
+function TRules.calcFullHouse(DiceSet: TDiceSet): Integer;
+begin
+  Result := FullHouseValue;
+end;
+
+function TRules.calcLargeStraight(DiceSet: TDiceSet): Integer;
+begin
+  Result := LargeStraightValue;
+end;
+
+function TRules.calcOnes(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := 0;
+
+  if DiceSet.Value1 = 1 then r := r + 1;
+  if DiceSet.Value2 = 1 then r := r + 1;
+  if DiceSet.Value3 = 1 then r := r + 1;
+  if DiceSet.Value4 = 1 then r := r + 1;
+  if DiceSet.Value5 = 1 then r := r + 1;
+  if DiceSet.Value6 = 1 then r := r + 1;
+
+  Result := r;
+end;
+
+function TRules.calcSixes(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := 0;
+
+  if DiceSet.Value1 = 6 then r := r + 6;
+  if DiceSet.Value2 = 6 then r := r + 6;
+  if DiceSet.Value3 = 6 then r := r + 6;
+  if DiceSet.Value4 = 6 then r := r + 6;
+  if DiceSet.Value5 = 6 then r := r + 6;
+  if DiceSet.Value6 = 6 then r := r + 6;
+
+  Result := r;
+end;
+
+function TRules.calcSmallStraight(DiceSet: TDiceSet): Integer;
+begin
+  Result := SmallStraightValue;
+end;
+
+function TRules.calcThreeOfKind(DiceSet: TDiceSet): Integer;
+begin
+  Result := calcAllValues(DiceSet);
+end;
+
+function TRules.calcThrees(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := 0;
+
+  if DiceSet.Value1 = 3 then r := r + 3;
+  if DiceSet.Value2 = 3 then r := r + 3;
+  if DiceSet.Value3 = 3 then r := r + 3;
+  if DiceSet.Value4 = 3 then r := r + 3;
+  if DiceSet.Value5 = 3 then r := r + 3;
+  if DiceSet.Value6 = 3 then r := r + 3;
+
+  Result := r;
+end;
+
+function TRules.calcTwos(DiceSet: TDiceSet): Integer;
+var
+  r: Integer;
+begin
+  r := 0;
+
+  if DiceSet.Value1 = 2 then r := r + 2;
+  if DiceSet.Value2 = 2 then r := r + 2;
+  if DiceSet.Value3 = 2 then r := r + 2;
+  if DiceSet.Value4 = 2 then r := r + 2;
+  if DiceSet.Value5 = 2 then r := r + 2;
+  if DiceSet.Value6 = 2 then r := r + 2;
+
+  Result := r;
+end;
+
+function TRules.calcYaz(DiceSet: TDiceSet): Integer;
+begin
+  Result := YazValue;
+end;
+
+function TRules.IsChance(DiceSet: TDiceSet): Boolean;
+begin
+  Result := True;
+end;
+
+function TRules.IsFives(DiceSet: TDiceSet): Boolean;
+begin
+  Result := False;
+
+  if HowManyFives(DiceSet) > 0 then
+    Result := True;
+end;
+
 function TRules.IsFourOfKind(DiceSet: TDiceSet): Boolean;
 begin
   Result := False;
@@ -318,6 +499,14 @@ begin
   if HowManySixes(DiceSet) >= 4 then
     Result := True;
 
+end;
+
+function TRules.IsFours(DiceSet: TDiceSet): Boolean;
+begin
+  Result := False;
+
+  if HowManyFours(DiceSet) > 0 then
+    Result := True;
 end;
 
 function TRules.IsFullHouse(DiceSet: TDiceSet): Boolean;
@@ -345,6 +534,22 @@ begin
      (HowManyFours(DiceSet) = 1) and (HowManyFives(DiceSet) = 1) and
      (HowManySixes(DiceSet) = 1)
   then
+    Result := True;
+end;
+
+function TRules.IsOnes(DiceSet: TDiceSet): Boolean;
+begin
+  Result := False;
+
+  if HowManyOnes(DiceSet) > 0 then
+    Result := True;
+end;
+
+function TRules.IsSixes(DiceSet: TDiceSet): Boolean;
+begin
+  Result := False;
+
+  if HowManySixes(DiceSet) > 0 then
     Result := True;
 end;
 
@@ -387,6 +592,22 @@ begin
   if HowManyFives(DiceSet) >= 3 then
     Result := True;
   if HowManySixes(DiceSet) >= 3 then
+    Result := True;
+end;
+
+function TRules.IsThrees(DiceSet: TDiceSet): Boolean;
+begin
+  Result := False;
+
+  if HowManyThrees(DiceSet) > 0 then
+    Result := True;
+end;
+
+function TRules.IsTwos(DiceSet: TDiceSet): Boolean;
+begin
+  Result := False;
+
+  if HowManyTwos(DiceSet) > 0 then
     Result := True;
 end;
 
