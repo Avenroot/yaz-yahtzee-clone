@@ -12028,6 +12028,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Twos'
     TabOrder = 8
+    OnClick = btnTwosClick
   end
   object btnThrees: TButton
     Left = 20
@@ -12036,6 +12037,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Threes'
     TabOrder = 9
+    OnClick = btnThreesClick
   end
   object btnFours: TButton
     Left = 20
@@ -12044,6 +12046,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Fours'
     TabOrder = 10
+    OnClick = btnFoursClick
   end
   object btnFives: TButton
     Left = 20
@@ -12052,6 +12055,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Fives'
     TabOrder = 11
+    OnClick = btnFivesClick
   end
   object btnSixes: TButton
     Left = 20
@@ -12060,6 +12064,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Sixes'
     TabOrder = 12
+    OnClick = btnSixesClick
   end
   object btnThreeOfKind: TButton
     Left = 240
@@ -12068,6 +12073,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = '3 of Kind'
     TabOrder = 13
+    OnClick = btnThreeOfKindClick
   end
   object btnFourOfKind: TButton
     Left = 240
@@ -12076,6 +12082,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = '4 of Kind'
     TabOrder = 14
+    OnClick = btnFourOfKindClick
   end
   object btnSmallStraight: TButton
     Left = 240
@@ -12084,6 +12091,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Sm Straight'
     TabOrder = 15
+    OnClick = btnSmallStraightClick
   end
   object btnLargeStraight: TButton
     Left = 240
@@ -12092,6 +12100,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Lg Straight'
     TabOrder = 16
+    OnClick = btnLargeStraightClick
   end
   object btnYaz: TButton
     Left = 240
@@ -12100,6 +12109,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Yaz'
     TabOrder = 17
+    OnClick = btnYazClick
   end
   object btnChance: TButton
     Left = 240
@@ -12108,6 +12118,7 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Chance'
     TabOrder = 18
+    OnClick = btnChanceClick
   end
   object btnRestartGame: TButton
     Left = 20
@@ -12125,5 +12136,6 @@ object frmMainGameBoard: TfrmMainGameBoard
     Height = 19
     Caption = 'Full House'
     TabOrder = 20
+    OnClick = btnFullHouseClick
   end
 end

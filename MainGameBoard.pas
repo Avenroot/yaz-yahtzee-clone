@@ -74,6 +74,18 @@ type
     procedure Button5Click(Sender: TObject);
     procedure btnRestartGameClick(Sender: TObject);
     procedure btnOnesClick(Sender: TObject);
+    procedure btnTwosClick(Sender: TObject);
+    procedure btnThreesClick(Sender: TObject);
+    procedure btnFoursClick(Sender: TObject);
+    procedure btnFivesClick(Sender: TObject);
+    procedure btnSixesClick(Sender: TObject);
+    procedure btnThreeOfKindClick(Sender: TObject);
+    procedure btnFourOfKindClick(Sender: TObject);
+    procedure btnFullHouseClick(Sender: TObject);
+    procedure btnSmallStraightClick(Sender: TObject);
+    procedure btnLargeStraightClick(Sender: TObject);
+    procedure btnYazClick(Sender: TObject);
+    procedure btnChanceClick(Sender: TObject);
   private
     FDiceSet: TDiceSet;
     FScoreBoard: TScoreboard;
@@ -143,6 +155,36 @@ begin
   Scoreboard := TScoreboard.Create();
 end;
 
+procedure TfrmMainGameBoard.btnChanceClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stChance, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnFivesClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stFives, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnFourOfKindClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stFourOfKind, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnFoursClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stFours, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnFullHouseClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stFullHouse, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnLargeStraightClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stLargeStraight, DiceSet);
+end;
+
 procedure TfrmMainGameBoard.btnOnesClick(Sender: TObject);
 begin
   Scoreboard.setScore(stOnes, DiceSet);
@@ -162,6 +204,16 @@ begin
   Dice5.Rotate := True;
 end;
 
+procedure TfrmMainGameBoard.btnSixesClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stSixes, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnSmallStraightClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stSmallStraight, DiceSet);
+end;
+
 procedure TfrmMainGameBoard.btnStopDiceClick(Sender: TObject);
 begin
   Dice1.Rotate := False;
@@ -169,6 +221,26 @@ begin
   Dice3.Rotate := False;
   Dice4.Rotate := False;
   Dice5.Rotate := False;
+end;
+
+procedure TfrmMainGameBoard.btnThreeOfKindClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stThreeOfKind, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnThreesClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stThrees, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnTwosClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stTwos, DiceSet);
+end;
+
+procedure TfrmMainGameBoard.btnYazClick(Sender: TObject);
+begin
+  Scoreboard.setScore(stYaz, DiceSet);
 end;
 
 procedure TfrmMainGameBoard.Button1Click(Sender: TObject);

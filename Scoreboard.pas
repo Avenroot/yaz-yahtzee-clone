@@ -25,6 +25,7 @@ type
     Chance: Integer;
     UpperTotal: Integer;
     LowerTotal: Integer;
+    GrandTotal: Integer;
     Bonus: Boolean;
 
     function GetUpperTotal: Integer;
@@ -71,6 +72,10 @@ begin
   LargeStraight := 0;
   Yaz := 0;
   Chance := 0;
+  UpperTotal := 0;
+  LowerTotal := 0;
+  GrandTotal := 0;
+  Bonus := False;
 end;
 
 procedure TScoreboard.setScore(Kind: TScoreType; DiceResults: TDiceSet);
