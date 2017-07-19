@@ -249,6 +249,8 @@ begin
     Dice1.Locked := False
   else
     Dice1.Locked := True;
+
+  DiceSet.Value1 := Dice1.Value;
 end;
 
 procedure TfrmMainGameBoard.Button2Click(Sender: TObject);
@@ -257,6 +259,8 @@ begin
     Dice2.Locked := False
   else
     Dice2.Locked := True;
+
+  DiceSet.Value2 := Dice2.Value;
 end;
 
 procedure TfrmMainGameBoard.Button3Click(Sender: TObject);
@@ -265,6 +269,8 @@ begin
     Dice3.Locked := False
   else
     Dice3.Locked := True;
+
+  DiceSet.Value3 := Dice3.Value;
 end;
 
 procedure TfrmMainGameBoard.Button4Click(Sender: TObject);
@@ -273,6 +279,8 @@ begin
     Dice4.Locked := False
   else
     Dice4.Locked := True;
+
+  DiceSet.Value4 := Dice4.Value;
 end;
 
 procedure TfrmMainGameBoard.Button5Click(Sender: TObject);
@@ -281,6 +289,8 @@ begin
     Dice5.Locked := False
   else
     Dice5.Locked := True;
+
+  DiceSet.Value5 := Dice5.Value;
 end;
 
 procedure TfrmMainGameBoard.Dice1Click(Sender: TObject);

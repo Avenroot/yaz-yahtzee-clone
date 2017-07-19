@@ -28,21 +28,17 @@ type
     FValue3: Integer;
     FValue4: Integer;
     FValue5: Integer;
-    FValue6: Integer;
     procedure SetValue1(const Value: Integer);
     procedure SetValue2(const Value: Integer);
     procedure SetValue3(const Value: Integer);
     procedure SetValue4(const Value: Integer);
     procedure SetValue5(const Value: Integer);
-    procedure SetValue6(const Value: Integer);
-
   public
     property Value1: Integer read FValue1 write SetValue1;
     property Value2: Integer read FValue2 write SetValue2;
     property Value3: Integer read FValue3 write SetValue3;
     property Value4: Integer read FValue4 write SetValue4;
     property Value5: Integer read FValue5 write SetValue5;
-    property Value6: Integer read FValue6 write SetValue6;
   end;
 
   TRules = class(TObject)
@@ -113,8 +109,6 @@ begin
     Result := Result + 1;
   if DiceSet.Value5 = 1 then
     Result := Result + 1;
-  if DiceSet.Value6 = 1 then
-    Result := Result + 1;
 end;
 
 function HowManyTwos(DiceSet: TDiceSet): Integer;
@@ -130,8 +124,6 @@ begin
   if DiceSet.Value4 = 2 then
     Result := Result + 1;
   if DiceSet.Value5 = 2 then
-    Result := Result + 1;
-  if DiceSet.Value6 = 2 then
     Result := Result + 1;
 end;
 
@@ -149,8 +141,6 @@ begin
     Result := Result + 1;
   if DiceSet.Value5 = 3 then
     Result := Result + 1;
-  if DiceSet.Value6 = 3 then
-    Result := Result + 1;
 end;
 
 function HowManyFours(DiceSet: TDiceSet): Integer;
@@ -166,8 +156,6 @@ begin
   if DiceSet.Value4 = 4 then
     Result := Result + 1;
   if DiceSet.Value5 = 4 then
-    Result := Result + 1;
-  if DiceSet.Value6 = 4 then
     Result := Result + 1;
 end;
 
@@ -185,8 +173,6 @@ begin
     Result := Result + 1;
   if DiceSet.Value5 = 5 then
     Result := Result + 1;
-  if DiceSet.Value6 = 5 then
-    Result := Result + 1;
 end;
 
 function HowManySixes(DiceSet: TDiceSet): Integer;
@@ -202,8 +188,6 @@ begin
   if DiceSet.Value4 = 6 then
     Result := Result + 1;
   if DiceSet.Value5 = 6 then
-    Result := Result + 1;
-  if DiceSet.Value6 = 6 then
     Result := Result + 1;
 end;
 
@@ -324,16 +308,11 @@ begin
   FValue5 := Value;
 end;
 
-procedure TDiceSet.SetValue6(const Value: Integer);
-begin
-  FValue6 := Value;
-end;
-
 function TRules.calcAllValues(DiceSet: TDiceSet): Integer;
 var
   r: Integer;
 begin
-  r := DiceSet.Value1 + DiceSet.Value2 + DiceSet.Value3 + DiceSet.Value4 + DiceSet.Value5 + DiceSet.Value6;
+  r := DiceSet.Value1 + DiceSet.Value2 + DiceSet.Value3 + DiceSet.Value4 + DiceSet.Value5;
 
   Result := r;
 end;
@@ -354,7 +333,6 @@ begin
   if DiceSet.Value3 = 5 then r := r + 5;
   if DiceSet.Value4 = 5 then r := r + 5;
   if DiceSet.Value5 = 5 then r := r + 5;
-  if DiceSet.Value6 = 5 then r := r + 5;
 
   Result := r;
 end;
@@ -375,7 +353,6 @@ begin
   if DiceSet.Value3 = 4 then r := r + 4;
   if DiceSet.Value4 = 4 then r := r + 4;
   if DiceSet.Value5 = 4 then r := r + 4;
-  if DiceSet.Value6 = 4 then r := r + 4;
 
   Result := r;
 end;
@@ -401,7 +378,6 @@ begin
   if DiceSet.Value3 = 1 then r := r + 1;
   if DiceSet.Value4 = 1 then r := r + 1;
   if DiceSet.Value5 = 1 then r := r + 1;
-  if DiceSet.Value6 = 1 then r := r + 1;
 
   Result := r;
 end;
@@ -417,7 +393,6 @@ begin
   if DiceSet.Value3 = 6 then r := r + 6;
   if DiceSet.Value4 = 6 then r := r + 6;
   if DiceSet.Value5 = 6 then r := r + 6;
-  if DiceSet.Value6 = 6 then r := r + 6;
 
   Result := r;
 end;
@@ -443,7 +418,6 @@ begin
   if DiceSet.Value3 = 3 then r := r + 3;
   if DiceSet.Value4 = 3 then r := r + 3;
   if DiceSet.Value5 = 3 then r := r + 3;
-  if DiceSet.Value6 = 3 then r := r + 3;
 
   Result := r;
 end;
@@ -459,7 +433,6 @@ begin
   if DiceSet.Value3 = 2 then r := r + 2;
   if DiceSet.Value4 = 2 then r := r + 2;
   if DiceSet.Value5 = 2 then r := r + 2;
-  if DiceSet.Value6 = 2 then r := r + 2;
 
   Result := r;
 end;
